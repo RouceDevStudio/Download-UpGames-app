@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpGames - Descarga la App</title>
+    <style>
+        /* Variables de color para mantener la estética de la App */
+        :root {
+            --color-primario: #5EFF43;
+            --color-fondo: #0f0f0f;
+            --color-tarjeta: #1a1a1a;
+            --texto: #ffffff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--texto);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Hero Section - Minimalista */
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(94, 255, 67, 0.3));
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            color: var(--color-primario);
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        /* Botón de Descarga Central */
+        .btn-download {
+            background-color: var(--color-primario);
+            color: #000;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(94, 255, 67, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(94, 255, 67, 0.4);
+            background-color: #4cdb37;
+        }
+
+        /* Sección de Descripción e Imágenes */
+        .description-section {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .description-text {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        .screenshots {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .screenshot-card {
+            background: var(--color-tarjeta);
+            padding: 10px;
+            border-radius: 15px;
+            border: 1px solid #333;
+        }
+
+        .screenshot-card img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        /* Footer (Igual al de tu App) */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+        }
+
+        /* Responsivo para móviles */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .btn-download { width: 80%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="/IMG_20260124_021720.png" alt="Logo UpGames" class="logo">
+        <h1>UpGames</h1>
+        <p class="tagline">Tu biblioteca de juegos definitiva en la palma de tu mano.</p>
+        
+        <a href="descargas/upgames_v1.apk" class="btn-download" download>
+            <span>📥 Descargar APK</span>
+        </a>
+    </section>
+
+    <section class="description-section">
+        <h2>¿Qué hay dentro?</h2>
+        <p class="description-text">
+            Explora un catálogo actualizado de los mejores juegos. Descargas directas, 
+            administración de contenido y actualizaciones diarias para que nunca te quedes sin jugar.
+        </p>
+
+        <div class="screenshots">
+            <div class="screenshot-card">
+                <img src="/Screenshot_2026-01-24-12-15-28-727_upgames.aplicqeh.jpg" alt="Captura 1">
+            </div>
+            <div class="screenshot-card">
+                <img src="/Screenshot_2026-01-24-12-15-34-093_upgames.aplicqeh.jpg" alt="Captura 2">
+            </div>
+            <div class="screenshot-card">
+                <img src="https://via.placeholder.com/200x400?text=Descargas" alt="Captura 3">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 UpGames - Todos los derechos reservados.</p>
+        <p style="font-size: 0.7rem;">Desarrollado con ❤️ para la comunidad Gamer.</p>
+    </footer>
+
+</body>
+</html>
