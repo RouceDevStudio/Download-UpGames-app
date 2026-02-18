@@ -469,6 +469,234 @@
             }
         }
 
+        /* ━━━━━━━━━━━━━━━━ TAGLINE HERO MULTI-LÍNEA ━━━━━━━━━━━━━━━━ */
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+        .hero-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+        .hero-tag.active {
+            background: rgba(94,255,67,0.1);
+            border-color: rgba(94,255,67,0.4);
+            color: var(--neon);
+        }
+
+        /* ━━━━━━━━━━━━━━━━ STATS BAR ━━━━━━━━━━━━━━━━ */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            background: rgba(94,255,67,0.15);
+            border: 1px solid rgba(94,255,67,0.25);
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 0 0 80px 0;
+        }
+        @media (min-width: 640px) { .stats-bar { grid-template-columns: repeat(4, 1fr); } }
+        .stat-item {
+            background: #0c0c0c;
+            padding: 24px 16px;
+            text-align: center;
+        }
+        .stat-number {
+            font-size: clamp(1.8rem, 6vw, 2.4rem);
+            font-weight: 900;
+            color: var(--neon);
+            display: block;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.72rem;
+            color: #aaa;
+            letter-spacing: 0.3px;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* ━━━━━━━━━━━━━━━━ FEATURE STRIP (secciones alternadas) ━━━━━━━━━━━━━━━━ */
+        .feature-strip {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 36px 28px;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .feature-strip::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px; height: 100%;
+            border-radius: 4px 0 0 4px;
+        }
+        .feature-strip.green::before  { background: var(--neon); }
+        .feature-strip.cyan::before   { background: var(--secondary); }
+        .feature-strip.purple::before { background: #a855f7; }
+        .feature-strip.orange::before { background: #f97316; }
+
+        .strip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 12px;
+            border-radius: 50px;
+            width: fit-content;
+        }
+        .strip-badge.green  { background: rgba(94,255,67,0.1);  color: var(--neon);      border: 1px solid rgba(94,255,67,0.3);  }
+        .strip-badge.cyan   { background: rgba(0,242,255,0.1);  color: var(--secondary); border: 1px solid rgba(0,242,255,0.3);  }
+        .strip-badge.purple { background: rgba(168,85,247,0.1); color: #a855f7;          border: 1px solid rgba(168,85,247,0.3); }
+        .strip-badge.orange { background: rgba(249,115,22,0.1); color: #f97316;          border: 1px solid rgba(249,115,22,0.3); }
+
+        .strip-title {
+            font-size: clamp(1.3rem, 4vw, 1.7rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+        .strip-desc {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        .strip-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 4px;
+        }
+        .strip-pill {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        /* ━━━━━━━━━━━━━━━━ NEXUS IA SECTION ━━━━━━━━━━━━━━━━ */
+        .nexus-section {
+            background: linear-gradient(135deg, #0a0a14 0%, #0a0a0a 100%);
+            border: 1.5px solid rgba(168,85,247,0.4);
+            border-radius: 24px;
+            padding: 44px 28px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .nexus-section::before {
+            content: '';
+            position: absolute;
+            top: -40%; left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .nexus-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #7c3aed, #a855f7);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .nexus-title {
+            font-size: clamp(1.6rem, 5vw, 2.2rem);
+            font-weight: 900;
+            color: var(--text-primary);
+            margin-bottom: 14px;
+            position: relative;
+            z-index: 1;
+        }
+        .nexus-title span {
+            background: linear-gradient(135deg, #a855f7, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .nexus-desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 560px;
+            margin: 0 auto 28px;
+            position: relative;
+            z-index: 1;
+        }
+        .nexus-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 32px;
+            position: relative;
+            z-index: 1;
+        }
+        @media (min-width: 640px) { .nexus-grid { grid-template-columns: repeat(2, 1fr); } }
+        .nexus-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 14px 16px;
+            background: rgba(168,85,247,0.05);
+            border: 1px solid rgba(168,85,247,0.2);
+            border-radius: 14px;
+            text-align: left;
+        }
+        .nexus-item ion-icon {
+            color: #a855f7;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .nexus-item-text strong {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+        .nexus-item-text span {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .nexus-note {
+            font-size: 0.78rem;
+            color: rgba(168,85,247,0.7);
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
         /* ━━━━━━━━━━━━━━━━ ANIMACIONES ━━━━━━━━━━━━━━━━ */
         @keyframes fadeInUp {
             from {
@@ -504,106 +732,362 @@
         <div class="logo-container">
             <img src="IMG_20260124_021720.png" alt="UpGames Logo" class="logo">
         </div>
-        
+
         <div class="version-badge">
             BUILD v3.1 • STABLE
         </div>
-        
+
         <h1>UPGAMES</h1>
-        <p class="tagline">Motor de búsqueda avanzado</p>
-        
+        <p class="tagline">El ecosistema digital de la comunidad</p>
+
+        <div class="hero-tags">
+            <span class="hero-tag active">Motor de Búsqueda</span>
+            <span class="hero-tag active">Indexador Comunitario</span>
+            <span class="hero-tag active">Biblioteca Digital</span>
+            <span class="hero-tag active">Red Social</span>
+            <span class="hero-tag active">Cutlink</span>
+            <span class="hero-tag active">Lanzadera Indie</span>
+            <span class="hero-tag active">Nexus IA ✨</span>
+        </div>
+
         <a href="https://github.com/RouceDevStudio/Download-UpGames-app/releases/download/UpGames/app3898327-1btag0.apk" class="download-btn">
             <ion-icon name="cloud-download-outline"></ion-icon>
             Descargar APK
         </a>
     </section>
 
-    <!-- SECCIÓN DE BENEFICIOS -->
+    <!-- STATS BAR -->
+    <section class="section" style="margin-top:0; margin-bottom:0;">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-number">∞</span>
+                <span class="stat-label">Contenido indexado</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">$1</span>
+                <span class="stat-label">Por 1K descargas (CPM)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10</span>
+                <span class="stat-label">Sistemas integrados</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Seguridad activa</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE CARACTERÍSTICAS PRINCIPALES -->
     <section class="section">
         <div class="section-header">
-            <p class="section-title">¿Por qué UpGames?</p>
-            <h2 class="section-heading">Todo lo que necesitas en una sola app</h2>
+            <p class="section-title">¿Qué es UpGames?</p>
+            <h2 class="section-heading">Un ecosistema completo, no solo una app</h2>
             <p class="section-description">
-                Una plataforma completa que revoluciona la forma en que compartes, descubres y monetizas contenido digital.
+                UpGames integra en una sola plataforma todo lo que necesitas para descubrir, compartir, publicar y monetizar contenido digital — impulsado por la comunidad y potenciado por inteligencia artificial.
             </p>
         </div>
 
         <div class="benefits-grid">
-            <!-- Beneficio 1: Monetización -->
+
+            <!-- Motor de Búsqueda -->
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <ion-icon name="cash-outline"></ion-icon>
+                    <ion-icon name="search-outline"></ion-icon>
                 </div>
-                <h3 class="benefit-title">Monetización Real</h3>
+                <h3 class="benefit-title">Motor de Búsqueda Avanzado</h3>
                 <p class="benefit-description">
-                    Gana $1.00 USD por cada 1,000 descargas de tu contenido. Tu creatividad ahora tiene valor tangible.
+                    Encuentra apps, juegos, mods y software que no existen en ninguna tienda oficial. Búsqueda inteligente con filtros avanzados, categorías y metadatos enriquecidos por la comunidad.
                 </p>
             </div>
 
-            <!-- Beneficio 2: Lanzadera Indie -->
+            <!-- Indexador Comunitario -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <ion-icon name="layers-outline"></ion-icon>
+                </div>
+                <h3 class="benefit-title">Indexador Comunitario</h3>
+                <p class="benefit-description">
+                    Los usuarios indexan metadatos de software de forma colaborativa. Cuantos más contribuidores, más rico y preciso es el catálogo global disponible para todos.
+                </p>
+            </div>
+
+            <!-- Red Social -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <ion-icon name="people-outline"></ion-icon>
+                </div>
+                <h3 class="benefit-title">Red Social Completa</h3>
+                <p class="benefit-description">
+                    Perfil propio, feed, publicaciones, interacciones y seguidores. Una red social enfocada en contenido digital donde tu actividad construye reputación real.
+                </p>
+            </div>
+
+            <!-- Cutlink -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <ion-icon name="link-outline"></ion-icon>
+                </div>
+                <h3 class="benefit-title">Cutlink</h3>
+                <p class="benefit-description">
+                    Sistema propio de UpGames integrado en las publicaciones. Cuando publicas contenido, Cutlink agrega publicidad al flujo de usuarios — generando ingresos reales para ti como autor, sin ningún paso extra.
+                </p>
+            </div>
+
+            <!-- Lanzadera Indie -->
             <div class="benefit-card">
                 <div class="benefit-icon">
                     <ion-icon name="rocket-outline"></ion-icon>
                 </div>
                 <h3 class="benefit-title">Lanzadera Indie</h3>
                 <p class="benefit-description">
-                    Publica tus juegos, apps o mods con alcance global. Sin costos, sin intermediarios, solo tú y tu audiencia.
+                    Publica tus juegos, apps o mods con alcance global. Sin costos iniciales, sin comisiones abusivas — solo tú, tu obra y tu audiencia.
                 </p>
             </div>
 
-            <!-- Beneficio 3: Seguridad 24/7 -->
+            <!-- Monetización -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <ion-icon name="cash-outline"></ion-icon>
+                </div>
+                <h3 class="benefit-title">Genera Ingresos Reales</h3>
+                <p class="benefit-description">
+                    Publica contenido y empieza a ganar. Cutlink agrega publicidad automáticamente a tus enlaces — a partir de las primeras <strong style="color:var(--neon)">2,000 descargas efectivas</strong> ganas <strong style="color:var(--neon)">$1 USD por cada 1,000 descargas</strong> adicionales. Modelo CPM real y transparente.
+                </p>
+            </div>
+
+            <!-- Verificación -->
             <div class="benefit-card">
                 <div class="benefit-icon">
                     <ion-icon name="shield-checkmark-outline"></ion-icon>
                 </div>
-                <h3 class="benefit-title">Seguridad 24/7</h3>
+                <h3 class="benefit-title">Verificación y Confianza</h3>
                 <p class="benefit-description">
-                    Bots automatizados filtran malware y contenido inapropiado. Navega con total tranquilidad.
+                    Sistema de verificación de cuentas, contenido y desarrolladores. Bots automatizados filtran malware 24/7. Sello de verificación para perfiles y apps confiables.
                 </p>
             </div>
 
-            <!-- Beneficio 4: Biblioteca Global -->
+            <!-- Sistema de Niveles -->
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <ion-icon name="trophy-outline"></ion-icon>
+                </div>
+                <h3 class="benefit-title">Sistema de Niveles</h3>
+                <p class="benefit-description">
+                    Sube de rango como <strong style="color:var(--neon)">Trusted Indexer</strong> contribuyendo activamente. Más nivel = más visibilidad en el feed, más peso en recomendaciones y más beneficios.
+                </p>
+            </div>
+
+            <!-- Biblioteca Digital -->
             <div class="benefit-card">
                 <div class="benefit-icon">
                     <ion-icon name="library-outline"></ion-icon>
                 </div>
-                <h3 class="benefit-title">Biblioteca Global</h3>
+                <h3 class="benefit-title">Biblioteca Digital</h3>
                 <p class="benefit-description">
-                    Accede a metadatos de software que no encontrarás en tiendas oficiales. Todo en un solo lugar.
+                    El feed principal muestra todo el contenido publicado por la comunidad en tiempo real. Recomendaciones automáticas y priorización inteligente según tus gustos y actividad.
                 </p>
             </div>
 
-            <!-- Beneficio 5: Comunidad Activa -->
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <ion-icon name="people-outline"></ion-icon>
+            <!-- Nexus IA preview -->
+            <div class="benefit-card" style="border-color: rgba(168,85,247,0.35); background: linear-gradient(135deg, #0a0a14, var(--card));">
+                <div class="benefit-icon" style="background: rgba(168,85,247,0.1);">
+                    <ion-icon name="sparkles-outline" style="color:#a855f7;"></ion-icon>
                 </div>
-                <h3 class="benefit-title">Comunidad Activa</h3>
+                <h3 class="benefit-title">Nexus IA <span style="font-size:0.65rem;color:#a855f7;vertical-align:middle;margin-left:6px;background:rgba(168,85,247,0.15);padding:2px 8px;border-radius:50px;border:1px solid rgba(168,85,247,0.3);">NUEVO</span></h3>
                 <p class="benefit-description">
-                    Conecta con desarrolladores y usuarios de todo el mundo. Colabora, comparte y crece juntos.
+                    IA independiente desarrollada e integrada en UpGames. Potencia la búsqueda, las recomendaciones, el análisis de contenido y la asistencia al usuario en tiempo real.
                 </p>
             </div>
 
-            <!-- Beneficio 6: Trusted Indexer -->
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <ion-icon name="star-outline"></ion-icon>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BIBLIOTECA DIGITAL -->
+    <section class="section" id="biblioteca">
+        <div class="section-header">
+            <p class="section-title">Contenido de la comunidad</p>
+            <h2 class="section-heading">Biblioteca Digital — Todo en un solo feed</h2>
+            <p class="section-description">
+                La página principal de UpGames es una biblioteca viva. Todo el contenido indexado por la comunidad, visible y accesible para todos, con inteligencia que lo organiza por ti.
+            </p>
+        </div>
+
+        <div class="feature-strip cyan">
+            <span class="strip-badge cyan"><ion-icon name="library-outline"></ion-icon> Biblioteca Digital</span>
+            <h3 class="strip-title">Un feed de contenido que crece con cada usuario que contribuye</h3>
+            <p class="strip-desc">
+                Cada vez que alguien indexa un juego, app, mod o software, aparece en la biblioteca global visible para todos. No hay muros de pago ni acceso restringido — si la comunidad lo publica, tú lo puedes encontrar y descargar.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">🎮 Juegos</span>
+                <span class="strip-pill">📱 Apps</span>
+                <span class="strip-pill">🛠️ Mods</span>
+                <span class="strip-pill">💾 Software</span>
+                <span class="strip-pill">🌍 Contenido global</span>
+                <span class="strip-pill">🆓 Acceso libre</span>
+            </div>
+        </div>
+
+        <div class="feature-strip purple">
+            <span class="strip-badge purple"><ion-icon name="sparkles-outline"></ion-icon> Recomendaciones IA</span>
+            <h3 class="strip-title">El feed no es aleatorio — es inteligente</h3>
+            <p class="strip-desc">
+                Nexus IA analiza tu actividad, descargas e interacciones para priorizar automáticamente el contenido que más te interesa. Los Trusted Indexers y el contenido verificado reciben mayor visibilidad, garantizando que lo mejor siempre esté al frente.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">🎯 Recomendaciones personalizadas</span>
+                <span class="strip-pill">⭐ Prioridad por nivel</span>
+                <span class="strip-pill">✅ Contenido verificado primero</span>
+                <span class="strip-pill">📈 Tendencias en tiempo real</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN CURLINKS -->
+    <section class="section" id="cutlink">
+        <div class="section-header">
+            <p class="section-title">Sistema de ingresos propio</p>
+            <h2 class="section-heading">Cutlink — Publica, genera descargas y cobra</h2>
+            <p class="section-description">
+                Cutlink está integrado directamente en las publicaciones de UpGames. Cuando alguien descarga tu contenido, el enlace con publicidad ya está ahí — generando ingresos reales para ti como autor.
+            </p>
+        </div>
+
+        <div class="feature-strip cyan">
+            <span class="strip-badge cyan"><ion-icon name="link-outline"></ion-icon> Cutlink</span>
+            <h3 class="strip-title">Publicidad automática en cada descarga de tu contenido</h3>
+            <p class="strip-desc">
+                Cuando publicas contenido en UpGames, Cutlink agrega automáticamente publicidad a los enlaces de descarga. No tienes que configurar nada — el sistema lo hace solo. Cada vez que otro usuario descarga tu publicación, ese clic ya lleva publicidad integrada que genera monetización al instante en el sistema, aunque el pago para ti como autor aplica una vez que cumples las condiciones.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">✂️ Propio de UpGames</span>
+                <span class="strip-pill">⚡ Publicidad automática</span>
+                <span class="strip-pill">📲 Sin configuración</span>
+                <span class="strip-pill">👤 Ingreso al autor</span>
+                <span class="strip-pill">📋 Sujeto a T&C</span>
+            </div>
+        </div>
+
+        <div class="feature-strip green">
+            <span class="strip-badge green"><ion-icon name="bar-chart-outline"></ion-icon> Modelo CPM — ¿Cómo cobras?</span>
+            <h3 class="strip-title">$1 por cada 1,000 descargas — a partir de las 2,000 efectivas</h3>
+            <p class="strip-desc">
+                El modelo de pago es claro y transparente. Las primeras <strong>2,000 descargas efectivas</strong> son el período de activación — a partir de ahí, ganas <strong>$1 USD por cada 1,000 descargas adicionales</strong>. Cuanto más popular sea tu publicación, más ingresos acumulas. Todo sujeto a los términos y condiciones de UpGames.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">🔓 Activa a las 2,000 descargas</span>
+                <span class="strip-pill">💵 $1 por cada 1K adicionales</span>
+                <span class="strip-pill">📈 Modelo CPM</span>
+                <span class="strip-pill">📋 Según términos y condiciones</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN RED SOCIAL -->
+    <section class="section" id="social">
+        <div class="section-header">
+            <p class="section-title">Red Social Integrada</p>
+            <h2 class="section-heading">No solo descargas — también conectas</h2>
+            <p class="section-description">
+                UpGames tiene un sistema de red social completo donde tu actividad construye reputación, audiencia y recompensas.
+            </p>
+        </div>
+
+        <div class="feature-strip orange">
+            <span class="strip-badge orange"><ion-icon name="people-outline"></ion-icon> Comunidad</span>
+            <h3 class="strip-title">Tu perfil es tu carta de presentación digital</h3>
+            <p class="strip-desc">
+                Crea tu perfil, sube contenido, interactúa con otros creadores y construye tu audiencia dentro del ecosistema. Cada acción suma a tu reputación y nivel en la plataforma.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">👤 Perfil personalizado</span>
+                <span class="strip-pill">📰 Feed de contenido</span>
+                <span class="strip-pill">❤️ Interacciones</span>
+                <span class="strip-pill">👥 Seguidores</span>
+                <span class="strip-pill">🏅 Verificación</span>
+                <span class="strip-pill">📈 Estadísticas</span>
+            </div>
+        </div>
+
+        <div class="feature-strip green">
+            <span class="strip-badge green"><ion-icon name="star-outline"></ion-icon> Reputación</span>
+            <h3 class="strip-title">El sistema de verificación y niveles que recompensa lo bueno</h3>
+            <p class="strip-desc">
+                No todos los perfiles son iguales. UpGames tiene un sistema de verificación para cuentas, contenido y desarrolladores. Los Trusted Indexers obtienen prioridad en el feed y más alcance para sus publicaciones, incentivando la calidad sobre la cantidad.
+            </p>
+            <div class="strip-pills">
+                <span class="strip-pill">✅ Perfil verificado</span>
+                <span class="strip-pill">🔝 Trusted Indexer</span>
+                <span class="strip-pill">🎯 Prioridad en feed</span>
+                <span class="strip-pill">📣 Mayor alcance</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NEXUS IA -->
+    <section class="section" id="nexus">
+        <div class="nexus-section">
+            <div class="nexus-badge">✨ Inteligencia Artificial Independiente</div>
+            <h2 class="nexus-title">Conoce a <span>Nexus IA</span></h2>
+            <p class="nexus-desc">
+                Nexus IA es una inteligencia artificial desarrollada de forma independiente e integrada dentro de UpGames para potenciar cada aspecto de la plataforma. No es un add-on — es parte del núcleo de la experiencia.
+            </p>
+            <div class="nexus-grid">
+                <div class="nexus-item">
+                    <ion-icon name="search-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Búsqueda Inteligente</strong>
+                        <span>Entiende lo que buscas, no solo las palabras clave. Resultados relevantes desde el primer intento.</span>
+                    </div>
                 </div>
-                <h3 class="benefit-title">Sistema de Niveles</h3>
-                <p class="benefit-description">
-                    Sube de nivel como Trusted Indexer y obtén prioridad en el feed principal. Tu reputación importa.
-                </p>
+                <div class="nexus-item">
+                    <ion-icon name="albums-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Recomendaciones Personalizadas</strong>
+                        <span>Aprende de tus gustos y actividad para sugerirte contenido que realmente te interesa.</span>
+                    </div>
+                </div>
+                <div class="nexus-item">
+                    <ion-icon name="shield-checkmark-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Análisis de Contenido</strong>
+                        <span>Evalúa metadatos y contenido indexado para garantizar calidad y detectar anomalías automáticamente.</span>
+                    </div>
+                </div>
+                <div class="nexus-item">
+                    <ion-icon name="chatbubble-ellipses-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Asistencia en Tiempo Real</strong>
+                        <span>Responde preguntas, guía al usuario y optimiza su experiencia dentro de la plataforma.</span>
+                    </div>
+                </div>
+                <div class="nexus-item">
+                    <ion-icon name="trending-up-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Tendencias Predictivas</strong>
+                        <span>Detecta qué contenido está ganando tracción antes de que se vuelva viral en la comunidad.</span>
+                    </div>
+                </div>
+                <div class="nexus-item">
+                    <ion-icon name="code-slash-outline"></ion-icon>
+                    <div class="nexus-item-text">
+                        <strong>Soporte a Desarrolladores</strong>
+                        <span>Ayuda a optimizar descripciones, etiquetas y metadatos para maximizar el alcance de tus publicaciones.</span>
+                    </div>
+                </div>
             </div>
-
+            <p class="nexus-note">Nexus IA es un proyecto independiente integrado en UpGames — desarrollado y mantenido de forma autónoma.</p>
+        </div>
     </section>
 
     <!-- PROMOCIÓN PARA DESARROLLADORES -->
     <section class="section">
         <div class="promo-section">
             <div class="promo-badge">🎮 Especial Desarrolladores</div>
-            <h2 class="promo-title">Lanza tu juego sin límites</h2>
+            <h2 class="promo-title">Lanza tu proyecto sin límites</h2>
             <p class="promo-description">
-                ¿Eres desarrollador independiente? UpGames es tu plataforma ideal para publicar y monetizar tus creaciones sin costos iniciales ni comisiones abusivas.
+                ¿Eres desarrollador independiente? UpGames es tu plataforma ideal para publicar, distribuir y monetizar tus creaciones con alcance global — sin costos iniciales, sin intermediarios, sin comisiones abusivas.
             </p>
 
             <div class="promo-features">
@@ -623,6 +1107,14 @@
                     <ion-icon name="checkmark-circle"></ion-icon>
                     <span class="promo-feature-text">Monetización desde el día 1</span>
                 </div>
+                <div class="promo-feature">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <span class="promo-feature-text">Red social integrada</span>
+                </div>
+                <div class="promo-feature">
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <span class="promo-feature-text">Potenciado con Nexus IA</span>
+                </div>
             </div>
 
             <a href="https://github.com/RouceDevStudio/Download-UpGames-app/releases/download/UpGames/app3898327-1btag0.apk" class="promo-cta">
@@ -636,11 +1128,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo">UPGAMES</div>
-            <p class="footer-text">todos los derechos de autor reservados UpGames 2026</p>
+            <p class="footer-text">Motor de búsqueda • Indexador comunitario • Red Social • Cutlink • Lanzadera Indie • Nexus IA</p>
+            <p class="footer-text">© 2026 UpGames — Todos los derechos reservados</p>
             <p class="footer-text">Secure Encrypted Network • Mobile Unit</p>
-            
+
             <div class="footer-links">
-                <a href="mailto:mr.m0onster@protonmail.com" class="footer-link">Soporte</a>
+                <a href="/cdn-cgi/l/email-protection#d2bfa0fcbfe2bdbca1a6b7a092a2a0bda6bdbcbfb3bbbefcb1bdbf" class="footer-link">Soporte</a>
                 <a href="https://roucedevstudio.github.io/Frontendappsent/terminos&condiciones.html" class="footer-link">Términos</a>
                 <a href="./politica-privacidad.html" class="footer-link">Privacidad</a>
             </div>
@@ -648,7 +1141,7 @@
     </footer>
 
     <!-- SCROLL SUAVE -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -669,11 +1162,1418 @@
             const hero = document.querySelector('.hero');
             if (hero && currentScroll < window.innerHeight) {
                 hero.style.transform = `translateY(${currentScroll * 0.3}px)`;
-                hero.style.opacity = 1 - (currentScroll / window.innerHeight) * 0.5;
+                hero.style.opacity = 1 - (currentScroll * 0.001);
             }
             lastScroll = currentScroll;
         });
     </script>
+
+
+<!-- ══════════════════════════════════════════════
+     📱 SCROLL TOOLTIPS + GUÍA APK — UpGames
+══════════════════════════════════════════════ -->
+<style>
+
+/* ━━━━ SCROLL TOOLTIP (no bloqueante) ━━━━━━━━━━━━━━━━━━━━━━ */
+#sc-tip {
+    position: fixed;
+    top: 12px;
+    left: 10px;
+    right: 10px;
+    z-index: 9000;
+    background: rgba(10,10,10,0.97);
+    border: 1.5px solid var(--neon, #5EFF43);
+    border-radius: 16px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    box-shadow: 0 8px 32px rgba(94,255,67,0.18), 0 2px 12px rgba(0,0,0,0.9);
+    pointer-events: all;
+    max-width: 420px;
+    margin: 0 auto;
+    /* empieza invisible arriba */
+    opacity: 0;
+    transform: translateY(-16px);
+    transition: opacity .3s ease, transform .3s ease;
+}
+#sc-tip.sc-show {
+    opacity: 1;
+    transform: translateY(0);
+}
+#sc-tip.sc-hide {
+    opacity: 0;
+    transform: translateY(-16px);
+}
+.sc-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+.sc-body { flex: 1; min-width: 0; }
+.sc-title {
+    font-size: .82rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 3px;
+    line-height: 1.2;
+}
+.sc-desc {
+    font-size: .73rem;
+    color: #aaa;
+    line-height: 1.45;
+}
+.sc-desc strong { color: #5EFF43; }
+.sc-x {
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0 0 0 6px;
+    flex-shrink: 0;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+}
+.sc-x:active { color: #ff4343; }
+
+/* barra de progreso auto-dismiss */
+.sc-bar {
+    position: absolute;
+    bottom: 0; left: 0;
+    height: 2px;
+    background: #5EFF43;
+    border-radius: 0 0 16px 16px;
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(1);
+}
+.sc-bar.sc-running {
+    transition: transform linear;
+    transform: scaleX(0);
+}
+
+/* ━━━━ OVERLAY + TOOLTIP APK (guía instalación) ━━━━━━━━━━━━ */
+#apk-lock {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 29990;
+    pointer-events: all;
+    touch-action: none;
+    background: transparent;
+}
+#apk-lock.on { display: block; }
+
+#apk-spot {
+    display: none;
+    position: fixed;
+    border-radius: 14px;
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.88);
+    z-index: 29995;
+    pointer-events: none;
+    transition: top .35s ease, left .35s ease, width .35s ease, height .35s ease;
+}
+
+#apk-tip {
+    display: none;
+    position: fixed;
+    z-index: 30000;
+    background: #0a0a0a;
+    border: 1.5px solid #5EFF43;
+    border-radius: 20px;
+    padding: 16px 16px 12px;
+    width: min(340px, calc(100vw - 20px));
+    box-sizing: border-box;
+    box-shadow: 0 12px 60px rgba(94,255,67,0.22), 0 2px 20px rgba(0,0,0,0.9);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    pointer-events: all;
+    max-height: 44vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 600px) {
+    #apk-tip {
+        width: calc(100vw - 20px) !important;
+        left: 10px !important;
+        right: 10px !important;
+        top: 10px !important;
+        bottom: auto !important;
+        transform: none !important;
+        max-height: 42vh;
+        border-radius: 16px;
+        padding: 14px 14px 10px;
+    }
+    .apk-ttl  { font-size: .88rem !important; margin-bottom: 5px !important; }
+    .apk-bod  { font-size: .75rem !important; line-height: 1.55 !important; }
+    .apk-bod .tip { font-size: .7rem !important; padding: 7px 10px !important; margin-top: 7px !important; }
+    .apk-step-icon { width: 36px !important; height: 36px !important; font-size: 1.1rem !important; margin-bottom: 8px !important; }
+    .apk-foot { margin-top: 10px !important; padding-top: 10px !important; }
+    .apk-btn  { padding: 8px 14px !important; font-size: .68rem !important; min-height: 34px !important; }
+}
+
+/* flecha tooltip APK */
+#apk-tip::before {
+    content: '';
+    position: absolute;
+    width: 14px; height: 14px;
+    background: #0a0a0a;
+    border: 1.5px solid #5EFF43;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+#apk-tip.at::before   { top:-8px;    left:28px; border-right:none; border-bottom:none; }
+#apk-tip.ab::before   { bottom:-8px; left:28px; border-left:none;  border-top:none;    }
+#apk-tip.an::before   { display:none; }
+
+/* ── Progress bar APK ── */
+.apk-progress-bar {
+    width: 100%; height: 3px;
+    background: #1a1a1a;
+    border-radius: 99px;
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+.apk-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #5EFF43, #00f2ff);
+    border-radius: 99px;
+    transition: width .4s ease;
+}
+.apk-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 8px;
+}
+.apk-badge {
+    font-size: .6rem; font-weight: 900; letter-spacing: 1.5px;
+    color: #5EFF43;
+    background: rgba(94,255,67,.1);
+    border: 1px solid rgba(94,255,67,.3);
+    border-radius: 20px;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.apk-stepnum { font-size: .65rem; font-weight: 700; color: rgba(94,255,67,.5); white-space: nowrap; }
+.apk-x {
+    background: none; border: none;
+    color: #444; cursor: pointer;
+    font-size: .95rem;
+    min-width: 30px; min-height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px; transition: color .2s, background .2s;
+    flex-shrink: 0;
+}
+.apk-x:hover { color: #ff4343; background: rgba(255,67,67,.1); }
+.apk-step-icon {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: rgba(94,255,67,.08);
+    border: 1px solid rgba(94,255,67,.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.apk-ttl { font-size: .98rem; font-weight: 800; color: #fff; margin-bottom: 8px; line-height: 1.3; }
+.apk-bod { font-size: .80rem; color: #999; line-height: 1.7; margin-bottom: 4px; }
+.apk-bod strong  { color: #5EFF43; }
+.apk-bod .warn   { color: #ffcc00; font-weight: 700; }
+.apk-bod .tip {
+    display: block; margin-top: 10px;
+    padding: 10px 12px;
+    background: rgba(94,255,67,.06);
+    border-left: 3px solid #5EFF43;
+    border-radius: 0 8px 8px 0;
+    font-size: .75rem; color: #aaa; line-height: 1.6;
+}
+.apk-bod .tip strong { color: #5EFF43; }
+.apk-foot {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 8px; margin-top: 14px; padding-top: 12px;
+    border-top: 1px solid #1a1a1a;
+}
+.apk-dots { display: flex; gap: 5px; align-items: center; flex-shrink: 0; }
+.apk-dot  { width: 6px; height: 6px; border-radius: 50%; background: #1f1f1f; transition: background .3s, transform .3s; }
+.apk-dot.on { background: #5EFF43; transform: scale(1.3); }
+.apk-nav { display: flex; gap: 8px; flex-shrink: 0; }
+.apk-btn { padding: 9px 18px; border-radius: 10px; font-size: .72rem; font-weight: 800; letter-spacing: .5px; cursor: pointer; border: none; text-transform: uppercase; min-height: 38px; transition: all .18s; }
+.apk-p { background: transparent; color: #444; border: 1px solid #222; }
+.apk-p:hover { color: #fff; border-color: #555; }
+.apk-n { background: #5EFF43; color: #000; }
+.apk-n:hover { filter: brightness(1.1); }
+
+/* ── FAB ── */
+#apk-fab {
+    position: fixed; bottom: 24px; left: 20px; z-index: 9800;
+    background: #0f0f0f; border: 1px solid #222; border-radius: 50%;
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; color: #5EFF43; font-size: 1.4rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,.7);
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+    -webkit-tap-highlight-color: transparent;
+}
+#apk-fab:hover { border-color: #5EFF43; box-shadow: 0 4px 24px rgba(94,255,67,.3); transform: scale(1.08); }
+
+/* ── Animación entrada tooltip APK ── */
+.apk-in { animation: apkIn .32s cubic-bezier(.34,1.3,.64,1) forwards; }
+@keyframes apkIn {
+    from { opacity:0; transform:translateY(10px) scale(.97); }
+    to   { opacity:1; transform:translateY(0) scale(1); }
+}
+.apk-pulse {
+    outline: 2px solid rgba(94,255,67,.75) !important;
+    outline-offset: 4px !important;
+    animation: apkRing 1.6s ease-in-out infinite;
+}
+@keyframes apkRing {
+    0%,100% { outline-color: rgba(94,255,67,.75); }
+    50%      { outline-color: rgba(94,255,67,.15); }
+}
+</style>
+
+<!-- DOM scroll tooltip -->
+<div id="sc-tip" role="status" aria-live="polite">
+    <div class="sc-icon" id="sc-icon">🔍</div>
+    <div class="sc-body">
+        <div class="sc-title" id="sc-title"></div>
+        <div class="sc-desc"  id="sc-desc"></div>
+    </div>
+    <button class="sc-x" id="sc-x" aria-label="Cerrar">✕</button>
+    <div class="sc-bar" id="sc-bar"></div>
+</div>
+
+<!-- DOM guía APK -->
+<div id="apk-lock"></div>
+<div id="apk-spot"></div>
+<div id="apk-tip">
+    <div class="apk-progress-bar"><div class="apk-progress-fill" id="apk-prog"></div></div>
+    <div class="apk-head">
+        <span class="apk-badge" id="apk-badge">Guía APK</span>
+        <span class="apk-stepnum" id="apk-stepnum">1/9</span>
+        <button class="apk-x" id="apk-close" aria-label="Cerrar">✕</button>
+    </div>
+    <div class="apk-step-icon" id="apk-icon"></div>
+    <div class="apk-ttl" id="apk-ttl"></div>
+    <div class="apk-bod" id="apk-bod"></div>
+    <div class="apk-foot">
+        <div class="apk-dots" id="apk-dots"></div>
+        <div class="apk-nav">
+            <button class="apk-btn apk-p" id="apk-prev">← Atrás</button>
+            <button class="apk-btn apk-n" id="apk-next">Siguiente →</button>
+        </div>
+    </div>
+</div>
+<button id="apk-fab" aria-label="Ver guía de instalación">
+    <ion-icon name="help-circle-outline"></ion-icon>
+</button>
+
+<script>
+/* ═══════════════════════════════════════════════════════
+   1) SCROLL TOOLTIPS — aparecen al hacer scroll a cada card
+═══════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+
+// Definición de tooltips por elemento
+const CARDS = [
+    {
+        sel: '.benefit-card:nth-child(1)',
+        icon: '🔍',
+        title: 'Motor de Búsqueda Avanzado',
+        desc: 'Estás viendo el <strong>motor de búsqueda central de UpGames</strong>. Encuentra apps, juegos, mods y software que <strong>no existen en ninguna tienda oficial</strong>. Usa filtros avanzados por categoría, tamaño, plataforma y reputación del publicador — todo enriquecido con metadatos aportados por la comunidad.'
+    },
+    {
+        sel: '.benefit-card:nth-child(2)',
+        icon: '📚',
+        title: 'Indexador Comunitario',
+        desc: 'Esta tarjeta describe el <strong>corazón colaborativo de UpGames</strong>: el indexador comunitario. Cualquier usuario puede agregar metadatos (nombre, descripción, capturas, versiones) a cualquier software. <strong>Cuantos más contribuidores activos, más completo y confiable es el catálogo</strong> para toda la comunidad.'
+    },
+    {
+        sel: '.benefit-card:nth-child(3)',
+        icon: '🗂️',
+        title: 'Biblioteca Digital',
+        desc: 'Aquí se describe la <strong>Biblioteca Digital de UpGames</strong>: el feed principal donde aparece todo el contenido publicado. Sin muros de pago, sin restricciones artificiales. <strong>Nexus IA analiza tus gustos</strong> y te sugiere contenido relevante de forma automática cada vez que navegas.'
+    },
+    {
+        sel: '.benefit-card:nth-child(4)',
+        icon: '👥',
+        title: 'Red Social Completa',
+        desc: 'Esta sección explica la <strong>capa social de UpGames</strong>. Tienes perfil propio, feed personal, publicaciones, sistema de seguidores y reacciones. <strong>Cada interacción —descargas, comentarios, valoraciones— construye tu reputación</strong> y determina cuánta visibilidad tiene tu contenido en la plataforma.'
+    },
+    {
+        sel: '.benefit-card:nth-child(5)',
+        icon: '✂️',
+        title: 'Cutlink — Sistema de ingresos',
+        desc: 'Estás viendo <strong>Cutlink</strong>, el sistema de monetización integrado. Cuando publicas contenido, Cutlink añade publicidad de forma automática a tus enlaces de descarga. A partir de las <strong>2,000 descargas efectivas</strong> recibes <strong>$1 por cada 1,000 descargas</strong> adicionales bajo el modelo CPM — sin configuración manual.'
+    },
+    {
+        sel: '.benefit-card:nth-child(6)',
+        icon: '🚀',
+        title: 'Lanzadera Indie',
+        desc: 'Esta es la <strong>Lanzadera Indie de UpGames</strong>, diseñada para creadores independientes. Publica tu juego, app o mod directamente sin intermediarios, sin comisiones y sin proceso de aprobación largo. <strong>Alcance global desde el día 1</strong>: tu obra llega a todos los usuarios de la plataforma al instante de publicarse.'
+    },
+    {
+        sel: '.benefit-card:nth-child(7)',
+        icon: '💰',
+        title: 'Genera Ingresos Reales',
+        desc: 'Esta tarjeta detalla el <strong>modelo de ingresos real de UpGames</strong>. Publica contenido y las primeras 2,000 descargas son el período de calentamiento. A partir de ahí, <strong>el modelo CPM de Cutlink te paga de forma automática</strong> sin que tengas que hacer nada extra — sin formularios ni intermediarios.'
+    },
+    {
+        sel: '.benefit-card:nth-child(8)',
+        icon: '🛡️',
+        title: 'Verificación y Confianza',
+        desc: 'Aquí se describe el <strong>sistema de seguridad activo de UpGames</strong>. Bots automatizados monitorean el contenido las 24 horas del día, los 7 días de la semana. <strong>Detectan malware, contenido inapropiado y cuentas falsas</strong> antes de que lleguen a los usuarios. La verificación de publicadores añade otra capa de confianza.'
+    },
+    {
+        sel: '.benefit-card:nth-child(9)',
+        icon: '🏆',
+        title: 'Sistema de Niveles',
+        desc: 'Esta sección muestra el <strong>sistema de progresión de UpGames</strong>. Contribuye activamente — indexa contenido, reporta errores, mantén tus publicaciones actualizadas — y subirás de rango hasta llegar a <strong>Trusted Indexer</strong>. Los rangos altos reciben mayor visibilidad en el feed, más alcance y privilegios especiales en la comunidad.'
+    },
+    {
+        sel: '.benefit-card:nth-child(10)',
+        icon: '✨',
+        title: 'Nexus IA — Inteligencia Artificial',
+        desc: 'Esta es la tarjeta de <strong>Nexus IA</strong>, la inteligencia artificial propia de UpGames. No es un chatbot externo — está integrada en el núcleo de la app. <strong>Potencia la búsqueda semántica, genera recomendaciones personalizadas</strong> según tu historial y analiza el contenido nuevo para clasificarlo automáticamente.'
+    },
+    {
+        sel: '#biblioteca .feature-strip:first-of-type',
+        icon: '🗂️',
+        title: 'Biblioteca Digital — Detalles',
+        desc: 'Estás en la <strong>sección detallada de la Biblioteca Digital</strong>. Aquí se explica cómo funciona el feed: todo el contenido indexado por la comunidad aparece en tiempo real. <strong>Sin muros de pago, sin restricciones regionales</strong> — si un usuario lo publicó y está verificado, está disponible para todos.'
+    },
+    {
+        sel: '#cutlink .feature-strip:first-of-type',
+        icon: '✂️',
+        title: 'Cutlink — Publicidad automática',
+        desc: 'Aquí se explica cómo funciona <strong>Cutlink por dentro</strong>. Al publicar un enlace de descarga, el sistema envuelve automáticamente ese enlace con publicidad no intrusiva. El usuario descarga normalmente y tú cobras. <strong>Sin configuración, sin cuentas externas</strong> — todo desde el panel de UpGames.'
+    },
+    {
+        sel: '#cutlink .feature-strip:last-of-type',
+        icon: '💵',
+        title: 'Modelo CPM — ¿Cuánto ganas exactamente?',
+        desc: 'Esta sección desglosa el <strong>modelo de pago CPM de Cutlink</strong>. Las primeras <strong>2,000 descargas</strong> son el período de activación gratuito. A partir de la descarga 2,001, el contador CPM se activa: <strong>$1 USD por cada 1,000 descargas</strong>. Sin topes, sin límites — cuanto más popular es tu contenido, más ganas.'
+    },
+    {
+        sel: '#social .feature-strip:first-of-type',
+        icon: '👤',
+        title: 'Tu perfil es tu marca en UpGames',
+        desc: 'Estás viendo la <strong>sección social de UpGames</strong>. Tu perfil es tu carta de presentación: foto, bio, nivel, historial de publicaciones y estadísticas públicas. <strong>Cada descarga, comentario y valoración</strong> que recibes suma a tu reputación — una reputación alta significa más visibilidad orgánica sin pagar nada extra.'
+    },
+    {
+        sel: '#nexus .nexus-section',
+        icon: '✨',
+        title: 'Nexus IA — Proyecto independiente',
+        desc: 'Esta sección presenta <strong>Nexus IA</strong> como proyecto propio de UpGames, desarrollado de forma autónoma. No depende de APIs externas ni de servicios de terceros. <strong>Está integrada directamente en la app</strong>: búsqueda semántica, moderación automática y recomendaciones personalizadas funcionan sin conexión a servicios externos.'
+    },
+    {
+        sel: '.promo-section',
+        icon: '🎮',
+        title: 'Especial Desarrolladores e Indie Creators',
+        desc: '¿Tienes un juego, app o mod que quieres publicar? Esta sección es para ti. <strong>Publica gratis, sin comisiones y sin proceso largo de aprobación.</strong> Desde el momento en que subes tu contenido, está disponible para millones de usuarios. Cuando superes las 2,000 descargas, <strong>Cutlink activa tu monetización automáticamente</strong>.'
+    }
+];
+
+const tipEl   = document.getElementById('sc-tip');
+const iconEl  = document.getElementById('sc-icon');
+const titleEl = document.getElementById('sc-title');
+const descEl  = document.getElementById('sc-desc');
+const closeEl = document.getElementById('sc-x');
+const barEl   = document.getElementById('sc-bar');
+
+let dismissTimer = null;
+let barTimer     = null;
+let current      = null;
+
+function showTip(card) {
+    if (current === card.sel) return; // ya mostrando este
+    current = card.sel;
+    clearTimers();
+
+    iconEl.textContent  = card.icon;
+    titleEl.textContent = card.title;
+    descEl.innerHTML    = card.desc;
+
+    // Resetear barra
+    barEl.style.transition = 'none';
+    barEl.style.transform  = 'scaleX(1)';
+    tipEl.classList.remove('sc-hide');
+    tipEl.classList.add('sc-show');
+
+    // Arrancar barra de progreso
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            barEl.classList.add('sc-running');
+            barEl.style.transition = 'transform 22s linear';
+            barEl.style.transform  = 'scaleX(0)';
+        });
+    });
+
+    // Auto-dismiss a los 22s
+    dismissTimer = setTimeout(hideTip, 22000);
+}
+
+function hideTip() {
+    clearTimers();
+    current = null;
+    tipEl.classList.remove('sc-show');
+    tipEl.classList.add('sc-hide');
+    barEl.classList.remove('sc-running');
+}
+
+function clearTimers() {
+    clearTimeout(dismissTimer);
+    clearTimeout(barTimer);
+}
+
+closeEl.addEventListener('click', hideTip);
+
+// Detección por scroll — activa la notificación cuando el CENTRO de la carta
+// cruza la zona central de la pantalla (evita el desfase del IntersectionObserver)
+const screenMid = () => window.innerHeight / 2;
+
+function getCardAtCenter() {
+    let best = null;
+    let bestDist = Infinity;
+    CARDS.forEach(card => {
+        const el = document.querySelector(card.sel);
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const cardMid = rect.top + rect.height / 2;
+        const dist = Math.abs(cardMid - screenMid());
+        // Solo considerar cartas que ya entraron en pantalla y cuyo centro
+        // está dentro de la mitad superior/inferior de la ventana
+        if (rect.top < window.innerHeight && rect.bottom > 0 && dist < bestDist) {
+            bestDist = dist;
+            best = card;
+        }
+    });
+    // Solo disparar si el centro de la carta más cercana está a menos de
+    // la mitad de la altura de pantalla respecto al centro → carta "protagonista"
+    return bestDist < window.innerHeight * 0.45 ? best : null;
+}
+
+let scrollRaf = null;
+window.addEventListener('scroll', () => {
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+        scrollRaf = null;
+        const card = getCardAtCenter();
+        if (card) showTip(card);
+    });
+}, { passive: true });
+
+})();
+
+
+/* ═══════════════════════════════════════════════════════
+   2) GUÍA APK — tutorial de instalación (FAB ?)
+═══════════════════════════════════════════════════════ */
+(function(){
+'use strict';
+
+const APK_STEPS = [
+    {
+        sel:  '.download-btn',
+        pos:  'below',
+        icon: '📲',
+        ttl:  'Paso 1 — Descarga el APK',
+        bod:  `Toca el <strong>botón verde</strong> para descargar UpGames. Esto guardará el archivo de instalación en tu teléfono Android.<br><br>
+               <span class="tip">💡 <strong>¿Qué es un APK?</strong> Es el formato de instalación oficial de Android, igual que cuando instalas una app desde Play Store pero de forma directa. Es 100% normal y seguro.</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '📂',
+        ttl:  'Paso 2 — Busca el archivo descargado',
+        bod:  `Cuando termine la descarga verás una notificación <strong>"app...apk descargado"</strong>. Tócala, o abre tu app de <strong>"Archivos" / "Descargas"</strong> y busca el archivo <strong>.apk</strong>.<br><br>
+               <span class="tip">📁 En Samsung se llama "Mis archivos", en Xiaomi "Administrador de archivos".</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '⚠️',
+        ttl:  'Paso 3 — Advertencia de Android (¡es normal!)',
+        bod:  `Android mostrará un aviso al abrir el APK. <span class="warn">¡No te asustes!</span> Le aparece a TODOS con cualquier APK que no viene de Play Store.<br><br>
+               <span class="tip">🔒 UpGames es legítima — este aviso NO significa que sea maliciosa.</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '🔓',
+        ttl:  'Paso 4 — Permitir fuentes desconocidas',
+        bod:  `Android te pedirá activar el permiso para instalar apps externas:<br><br>
+               📱 <strong>Samsung:</strong> Configuración → Biometría y seguridad → Instalar apps desconocidas → Permitir.<br><br>
+               📱 <strong>Xiaomi:</strong> Toca el APK → botón azul "Configuración" → "Permitir esta fuente".<br><br>
+               📱 <strong>Otros:</strong> Configuración → Aplicaciones → Permisos especiales → Instalar apps desconocidas.`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '👆',
+        ttl:  'Paso 5 — Toca "Instalar"',
+        bod:  `Aparecerá la pantalla con el <strong>ícono de UpGames</strong> y el botón <strong>"Instalar"</strong>. Tócalo y espera sin cerrar la pantalla.<br><br>
+               <span class="tip">⏱️ Tarda entre <strong>5 y 30 segundos</strong> según la velocidad de tu teléfono.</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '🛡️',
+        ttl:  'Paso 6 — Play Protect puede aparecer',
+        bod:  `Google Play Protect puede mostrar otro aviso con el botón <strong>"Instalar de todas formas"</strong>. Tócalo con confianza — lo muestra con TODAS las apps fuera de Play Store.<br><br>
+               <span class="tip">✅ UpGames no accede a tus contactos, cámara ni datos personales sin motivo.</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '✅',
+        ttl:  '¡App instalada! — Paso 7',
+        bod:  `Verás <strong>"App instalada"</strong>. Toca <strong>"Abrir"</strong> para entrar ya, o <strong>"Listo"</strong> para buscarla después en tu cajón de apps.<br><br>
+               <span class="tip">📌 Si no ves el ícono de inmediato, desliza hacia arriba en el cajón de apps.</span>`
+    },
+    {
+        sel:  null,
+        pos:  'center',
+        icon: '🔄',
+        ttl:  'Actualizaciones futuras',
+        bod:  `Para actualizar: descarga el nuevo APK desde esta página y toca <strong>"Actualizar"</strong>. <strong>No desinstales la app anterior</strong> — tus datos se conservan.<br><br>
+               <span class="warn">⚠️ ¿Problemas?</span> Almacenamiento lleno, permiso no activado o Android menor a 6.0 son las causas más comunes.`
+    },
+    {
+        sel:  '.download-btn',
+        pos:  'below',
+        icon: '🚀',
+        ttl:  '¡Todo listo! Descarga UpGames ahora',
+        bod:  `Resumen rápido:<br>
+               1️⃣ Descarga el APK con el botón verde.<br>
+               2️⃣ Abre el archivo desde Notificaciones o Descargas.<br>
+               3️⃣ Activa el permiso de "fuentes desconocidas".<br>
+               4️⃣ Instalar → Instalar de todas formas.<br>
+               5️⃣ ¡Abre UpGames!<br><br>
+               <span class="tip">❓ Toca el botón <strong>?</strong> en cualquier momento para volver a esta guía.</span>`
+    }
+];
+
+const lockEl  = document.getElementById('apk-lock');
+const spotEl  = document.getElementById('apk-spot');
+const tipEl   = document.getElementById('apk-tip');
+const progEl  = document.getElementById('apk-prog');
+const badgeE  = document.getElementById('apk-badge');
+const stepnE  = document.getElementById('apk-stepnum');
+const iconE   = document.getElementById('apk-icon');
+const ttlE    = document.getElementById('apk-ttl');
+const bodE    = document.getElementById('apk-bod');
+const dotsE   = document.getElementById('apk-dots');
+const prevB   = document.getElementById('apk-prev');
+const nextB   = document.getElementById('apk-next');
+const closeB  = document.getElementById('apk-close');
+const fabB    = document.getElementById('apk-fab');
+
+let idx = 0, active = false, lastEl = null;
+const MOB = () => window.innerWidth <= 600;
+
+window.startApkGuide = start;
+
+function start() {
+    idx = 0; active = true;
+    lockEl.classList.add('on');
+    spotEl.style.display = 'block';
+    tipEl.style.display  = 'block';
+    document.body.style.overflow = 'hidden';
+    // Ocultar el scroll tooltip mientras la guía APK está activa
+    document.getElementById('sc-tip').style.display = 'none';
+    render();
+}
+
+function finish() {
+    active = false;
+    lockEl.classList.remove('on');
+    spotEl.style.display = 'none';
+    tipEl.style.display  = 'none';
+    document.body.style.overflow = '';
+    clearPulse();
+    document.getElementById('sc-tip').style.display = '';
+}
+
+function render() {
+    const s = APK_STEPS[idx], total = APK_STEPS.length;
+    progEl.style.width  = Math.round(((idx+1)/total)*100) + '%';
+    badgeE.textContent  = 'Guía APK';
+    stepnE.textContent  = `${idx+1}/${total}`;
+    iconE.textContent   = s.icon;
+    ttlE.textContent    = s.ttl;
+    bodE.innerHTML      = s.bod;
+    prevB.style.visibility = idx === 0 ? 'hidden' : 'visible';
+    nextB.textContent   = idx === total-1 ? '¡Entendido! ✓' : 'Siguiente →';
+
+    dotsE.innerHTML = '';
+    APK_STEPS.forEach((_,i) => {
+        const d = document.createElement('span');
+        d.className = 'apk-dot' + (i === idx ? ' on' : '');
+        dotsE.appendChild(d);
+    });
+
+    clearPulse();
+
+    if (!s.sel) {
+        hideSpot();
+        placeCenter();
+    } else {
+        const el = document.querySelector(s.sel);
+        if (!el) { hideSpot(); placeCenter(); }
+        else {
+            if (MOB()) {
+                const tipH = (window.innerHeight * 0.42) + 24;
+                const elTop = el.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({ top: Math.max(0, elTop - tipH), behavior: 'smooth' });
+            } else {
+                el.scrollIntoView({ block: 'center', behavior: 'smooth' });
+            }
+            setTimeout(() => { spotOn(el, s.pos); animate(); }, 380);
+            return;
+        }
+    }
+    animate();
+}
+
+function spotOn(el, pos) {
+    const PAD = 8, rect = el.getBoundingClientRect();
+    if (MOB()) {
+        const tipH = tipEl.offsetHeight || Math.round(window.innerHeight * 0.42);
+        const spotTop = tipH + 16;
+        const spotH   = Math.max(60, window.innerHeight - spotTop - 10);
+        spotEl.style.cssText = `display:block;top:${spotTop}px;left:${Math.max(0,rect.left-PAD)}px;width:${Math.min(window.innerWidth,rect.width+PAD*2)}px;height:${spotH}px;`;
+    } else {
+        spotEl.style.cssText = `display:block;top:${rect.top-PAD}px;left:${rect.left-PAD}px;width:${rect.width+PAD*2}px;height:${rect.height+PAD*2}px;`;
+    }
+    el.classList.add('apk-pulse');
+    lastEl = el;
+    placeTooltip(rect, pos);
+}
+
+function hideSpot()   { spotEl.style.display = 'none'; }
+function clearPulse() { if (lastEl) { lastEl.classList.remove('apk-pulse'); lastEl = null; } }
+
+function animate() {
+    tipEl.classList.remove('apk-in');
+    void tipEl.offsetWidth;
+    tipEl.classList.add('apk-in');
+}
+
+function placeCenter() {
+    tipEl.className = 'an';
+    tipEl.removeAttribute('style');
+    tipEl.style.display = 'block';
+    if (!MOB()) {
+        tipEl.style.cssText = 'display:block;position:fixed;transform:translate(-50%,-50%);top:50%;left:50%;';
+    }
+    // En móvil el CSS media query lo pega arriba automáticamente
+}
+
+function placeTooltip(rect, pos) {
+    tipEl.removeAttribute('style');
+    if (MOB()) {
+        tipEl.className = 'an';
+        tipEl.style.display = 'block';
+        return;
+    }
+    // Desktop
+    const TW = tipEl.offsetWidth||330, TH = tipEl.offsetHeight||320;
+    const VW = window.innerWidth,  VH = window.innerHeight, G = 16;
+    let top, left, cls = 'at';
+    if (pos==='below') { top=rect.bottom+G; left=Math.max(10,rect.left); cls='at'; }
+    if (pos==='above') { top=rect.top-TH-G; left=Math.max(10,rect.left); cls='ab'; }
+    if ((left||0)+TW > VW-10) left = VW-TW-10;
+    if ((left||0) < 10) left = 10;
+    if ((top||0)+TH > VH-10) { top=rect.top-TH-G; cls='ab'; }
+    if ((top||0) < 10) top = 10;
+    tipEl.className = cls;
+    tipEl.style.cssText = `display:block;position:fixed;top:${top}px;left:${left}px;`;
+}
+
+nextB.addEventListener('click',  () => { if(idx<APK_STEPS.length-1){idx++;render();}else finish(); });
+prevB.addEventListener('click',  () => { if(idx>0){idx--;render();} });
+closeB.addEventListener('click', finish);
+fabB.addEventListener('click',   start);
+
+lockEl.addEventListener('click',      e => e.stopPropagation(), true);
+lockEl.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
+lockEl.addEventListener('touchmove',  e => e.preventDefault(), { passive: false });
+
+document.addEventListener('keydown', e => {
+    if (!active) return;
+    if (e.key==='ArrowRight'||e.key==='Enter') nextB.click();
+    if (e.key==='ArrowLeft') prevB.click();
+    if (e.key==='Escape') finish();
+});
+window.addEventListener('resize', () => { if(active) render(); });
+
+})();
+</script>
+<!-- FIN TUTORIAL APK -->
+
+<!-- ══════════════════════════════════════════════════════
+     NEXUS IA WIDGET — UpGames
+     Archivo standalone · Pega este bloque antes de </body>
+     Paleta: #5EFF43 (verde) · #00f2ff (cyan) · #000/#0f0f0f/#1a1a1a
+══════════════════════════════════════════════════════ -->
+
+<!-- ── FAB ── -->
+<button id="nxFab" onclick="nxToggle()" aria-label="Abrir Nexus IA">
+  <span class="nxf-r1"></span>
+  <span class="nxf-r2"></span>
+  <div class="nxf-inner">
+    <!-- Icono: hexágono IA -->
+    <svg viewBox="0 0 40 40" fill="none" class="nxf-ico">
+      <path d="M20 3L35.59 12V28L20 37L4.41 28V12L20 3Z"
+            stroke="url(#fabG)" stroke-width="1.1" fill="none" opacity=".45"/>
+      <path d="M20 9.5L30 15.5V25.5L20 31.5L10 25.5V15.5L20 9.5Z"
+            stroke="url(#fabG)" stroke-width=".8" fill="none" opacity=".7"/>
+      <line x1="20" y1="14" x2="20" y2="26"
+            stroke="url(#fabG)" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="14" y1="20" x2="26" y2="20"
+            stroke="url(#fabG)" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="20" cy="20" r="2.8" fill="url(#fabG)"/>
+      <circle cx="20" cy="3"    r="1.3" fill="#5EFF43" opacity=".9"/>
+      <circle cx="35.59" cy="12" r="1"  fill="#00f2ff" opacity=".7"/>
+      <circle cx="35.59" cy="28" r="1"  fill="#00f2ff" opacity=".7"/>
+      <circle cx="20" cy="37"   r="1.3" fill="#5EFF43" opacity=".9"/>
+      <circle cx="4.41" cy="28" r="1"   fill="#00f2ff" opacity=".7"/>
+      <circle cx="4.41" cy="12" r="1"   fill="#00f2ff" opacity=".7"/>
+      <defs>
+        <linearGradient id="fabG" x1="4" y1="4" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+          <stop offset="0%"   stop-color="#5EFF43"/>
+          <stop offset="100%" stop-color="#00f2ff"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span class="nxf-tag">IA</span>
+  </div>
+</button>
+
+<!-- ── PANEL ── -->
+<div id="nxPanel" role="dialog" aria-label="Nexus IA">
+
+  <!-- Esquinas HUD (solo en modo expandido) -->
+  <b class="nx-c nx-c-tl"></b>
+  <b class="nx-c nx-c-tr"></b>
+  <b class="nx-c nx-c-bl"></b>
+  <b class="nx-c nx-c-br"></b>
+
+  <!-- Header -->
+  <header class="nx-hdr">
+    <div class="nx-hdr-l">
+      <div class="nx-logo-box">
+        <svg viewBox="0 0 24 24" fill="none" class="nx-lsvg">
+          <path d="M12 2L22 12L12 22L2 12Z"
+                stroke="url(#hdrG)" stroke-width=".9" opacity=".4"/>
+          <path d="M12 7L17 12L12 17L7 12Z"
+                stroke="url(#hdrG)" stroke-width=".7" opacity=".7"/>
+          <line x1="12" y1="9"  x2="12" y2="15"
+                stroke="#00f2ff" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="9"  y1="12" x2="15" y2="12"
+                stroke="#00f2ff" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="#5EFF43"/>
+          <defs>
+            <linearGradient id="hdrG" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#5EFF43"/>
+              <stop offset="1" stop-color="#00f2ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="nx-live"></span>
+      </div>
+      <div class="nx-titles">
+        <span class="nx-name">NEXUS <em>IA</em></span>
+        <span class="nx-sub">UPGAMES · <span id="nxClk">──:──</span></span>
+      </div>
+    </div>
+    <div class="nx-hdr-r">
+      <button class="nx-ibtn" id="nxExpBtn" onclick="nxExpand()" title="Expandir">
+        <svg id="nxExpIco" viewBox="0 0 16 16" fill="none"
+             stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+          <path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/>
+        </svg>
+      </button>
+      <button class="nx-ibtn nx-ibtn-x" onclick="nxToggle()" title="Cerrar">✕</button>
+    </div>
+  </header>
+
+  <!-- Divisor gradiente -->
+  <div class="nx-div"></div>
+
+  <!-- Body: iframe + boot -->
+  <div class="nx-body">
+    <iframe
+      id="nxFrame"
+      src=""
+      data-src="https://backendbuscador.onrender.com"
+      allow="microphone; clipboard-read; clipboard-write"
+      title="Nexus IA"
+      loading="lazy">
+    </iframe>
+
+    <!-- Pantalla de arranque -->
+    <div id="nxBoot">
+      <div class="nb-visual">
+        <span class="nb-ring nb-ra"></span>
+        <span class="nb-ring nb-rb"></span>
+        <span class="nb-ring nb-rc"></span>
+        <svg viewBox="0 0 52 52" fill="none" class="nb-ico">
+          <path d="M26 2L50 26L26 50L2 26Z"
+                stroke="#5EFF43" stroke-width=".9" opacity=".25"/>
+          <path d="M26 10L42 26L26 42L10 26Z"
+                stroke="#00f2ff" stroke-width=".7" opacity=".45"/>
+          <line x1="26" y1="18" x2="26" y2="34"
+                stroke="#5EFF43" stroke-width="1.8" stroke-linecap="round"/>
+          <line x1="18" y1="26" x2="34" y2="26"
+                stroke="#5EFF43" stroke-width="1.8" stroke-linecap="round"/>
+          <circle cx="26" cy="26" r="3.5" fill="#5EFF43" opacity=".9"/>
+          <circle cx="26" cy="2"  r="1.4" fill="#5EFF43"/>
+          <circle cx="50" cy="26" r="1.1" fill="#00f2ff"/>
+          <circle cx="26" cy="50" r="1.4" fill="#5EFF43"/>
+          <circle cx="2"  cy="26" r="1.1" fill="#00f2ff"/>
+        </svg>
+      </div>
+      <div class="nb-info">
+        <p class="nb-lbl" id="nbLbl">INICIANDO NEXUS</p>
+        <div class="nb-barwrap">
+          <div class="nb-bar"><div class="nb-fill" id="nbFill"></div></div>
+          <span class="nb-pct" id="nbPct">0%</span>
+        </div>
+        <div class="nb-log" id="nbLog"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="nx-foot">
+    <span class="nx-fl"><i class="nx-fdot"></i>EN LÍNEA</span>
+    <span class="nx-fr">NEXUS v4.0</span>
+  </footer>
+</div>
+
+<!-- Overlay -->
+<div id="nxOvr" onclick="nxClose()"></div>
+
+
+<!-- ════════════ CSS ════════════ -->
+<style>
+/* Tokens de color de UpGames, scope local */
+#nxFab, #nxPanel, #nxBoot, #nxOvr {
+  --g:   #5EFF43;
+  --g1:  rgba(94,255,67,.07);
+  --g2:  rgba(94,255,67,.14);
+  --cy:  #00f2ff;
+  --cy1: rgba(0,242,255,.08);
+  --bk0: #000000;
+  --bk1: #080808;
+  --bk2: #0f0f0f;
+  --bd:  #1a1a1a;
+  --ts:  #555;
+  --ff:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --mo:  cubic-bezier(.4,0,.2,1);
+  --sp:  cubic-bezier(.34,1.4,.64,1);
+}
+
+/* ─── FAB ─── */
+#nxFab {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--bk1);
+  border: 1px solid var(--bd);
+  padding: 0;
+  cursor: pointer;
+  z-index: 9990;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 6px 24px rgba(0,0,0,.8);
+  transition:
+    transform .28s var(--sp),
+    border-color .22s var(--mo),
+    box-shadow .22s var(--mo);
+}
+#nxFab:hover {
+  border-color: rgba(94,255,67,.3);
+  box-shadow: 0 0 0 1px rgba(94,255,67,.08), 0 0 18px rgba(94,255,67,.1), 0 10px 36px rgba(0,0,0,.9);
+  transform: translateY(-2px);
+}
+#nxFab.nx-open {
+  border-color: rgba(94,255,67,.25);
+  box-shadow: 0 0 0 1px rgba(94,255,67,.1), 0 0 22px rgba(94,255,67,.12), 0 14px 44px rgba(0,0,0,.9);
+  transform: translateY(-1px) scale(.97);
+}
+
+/* Anillos del FAB */
+.nxf-r1, .nxf-r2 {
+  position: absolute;
+  border-radius: 18px;
+  pointer-events: none;
+}
+.nxf-r1 {
+  inset: -2px;
+  border: 1px solid rgba(94,255,67,.2);
+  animation: nxfPulse 2.6s ease-in-out infinite;
+}
+.nxf-r2 {
+  inset: -6px;
+  border: 1px solid rgba(0,242,255,.09);
+  border-radius: 22px;
+  animation: nxfPulse 2.6s ease-in-out infinite .5s;
+}
+@keyframes nxfPulse {
+  0%,100% { opacity:.6; transform:scale(1); }
+  50%     { opacity:1;  transform:scale(1.04); }
+}
+
+.nxf-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.nxf-ico {
+  width: 28px;
+  height: 28px;
+}
+.nxf-tag {
+  font-family: var(--ff);
+  font-size: .37rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: rgba(94,255,67,.45);
+  line-height: 1;
+}
+
+/* ─── PANEL ─── */
+#nxPanel {
+  position: fixed;
+  bottom: calc(90px + 56px + 12px);
+  right: 20px;
+  width: 355px;
+  height: 548px;
+  max-height: calc(100svh - 195px);
+  background: var(--bk1);
+  border: 1px solid var(--bd);
+  border-radius: 20px;
+  z-index: 9991;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(.88) translateY(18px);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity .3s var(--mo), transform .38s var(--sp);
+  box-shadow:
+    0 0 0 .5px rgba(94,255,67,.04),
+    0 24px 70px rgba(0,0,0,.97),
+    0 48px 100px rgba(0,0,0,.7);
+}
+#nxPanel.nx-open {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: all;
+}
+#nxPanel.nx-exp {
+  top: 16px; left: 16px; right: 16px; bottom: 16px;
+  width: auto; height: auto; max-height: none;
+  border-radius: 18px;
+  border-color: rgba(94,255,67,.12);
+}
+#nxPanel.nx-exp .nx-c { opacity: 1; }
+
+/* Esquinas HUD */
+.nx-c {
+  position: absolute;
+  width: 13px; height: 13px;
+  z-index: 20;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s var(--mo);
+  display: block;
+}
+.nx-c-tl { top:-1px; left:-1px;  border-top:2px solid var(--g);  border-left:2px solid var(--g);  border-radius:18px 0 0 0; }
+.nx-c-tr { top:-1px; right:-1px; border-top:2px solid var(--cy); border-right:2px solid var(--cy); border-radius:0 18px 0 0; }
+.nx-c-bl { bottom:-1px; left:-1px;  border-bottom:2px solid var(--cy); border-left:2px solid var(--cy);  border-radius:0 0 0 18px; }
+.nx-c-br { bottom:-1px; right:-1px; border-bottom:2px solid var(--g);  border-right:2px solid var(--g);  border-radius:0 0 18px 0; }
+
+/* ─── HEADER ─── */
+.nx-hdr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 13px 9px;
+  flex-shrink: 0;
+}
+.nx-hdr-l, .nx-hdr-r {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nx-logo-box {
+  position: relative;
+  width: 30px; height: 30px;
+  background: var(--g1);
+  border: 1px solid rgba(94,255,67,.18);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nx-lsvg { width: 16px; height: 16px; }
+
+.nx-live {
+  position: absolute;
+  top: -2.5px; right: -2.5px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--g);
+  border: 1.5px solid var(--bk1);
+  box-shadow: 0 0 5px var(--g);
+  animation: nxBlink 2s step-end infinite;
+}
+@keyframes nxBlink { 0%,100%{opacity:1} 50%{opacity:.1} }
+
+.nx-titles { display: flex; flex-direction: column; gap: 2px; }
+.nx-name {
+  font-family: var(--ff);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: 3.5px;
+  color: var(--g);
+  line-height: 1;
+}
+.nx-name em {
+  font-style: normal;
+  color: var(--cy);
+  letter-spacing: 2px;
+}
+.nx-sub {
+  font-family: 'Courier New', monospace;
+  font-size: .44rem;
+  letter-spacing: 1.5px;
+  color: var(--ts);
+  line-height: 1;
+}
+
+.nx-ibtn {
+  width: 28px; height: 28px;
+  background: rgba(255,255,255,.02);
+  border: 1px solid var(--bd);
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: .78rem;
+  line-height: 1;
+  transition: border-color .18s, color .18s, background .18s;
+  -webkit-tap-highlight-color: transparent;
+}
+.nx-ibtn svg { width: 11px; height: 11px; }
+.nx-ibtn:hover {
+  border-color: rgba(94,255,67,.25);
+  color: var(--g);
+  background: var(--g1);
+}
+.nx-ibtn-x:hover {
+  border-color: rgba(255,60,75,.3);
+  color: #ff3c4b;
+  background: rgba(255,60,75,.05);
+}
+
+/* Divisor */
+.nx-div {
+  height: 1px;
+  flex-shrink: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(94,255,67,.16) 25%,
+    rgba(0,242,255,.1)  65%,
+    transparent 100%);
+}
+
+/* ─── BODY ─── */
+.nx-body {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #030304;
+}
+#nxFrame {
+  width: 100%; height: 100%;
+  border: none; display: block;
+  opacity: 0;
+  transition: opacity .55s var(--mo);
+}
+#nxFrame.nx-on { opacity: 1; }
+
+/* ─── BOOT ─── */
+#nxBoot {
+  position: absolute; inset: 0;
+  background: var(--bk1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  z-index: 10;
+  transition: opacity .5s var(--mo);
+}
+#nxBoot.nx-done { opacity: 0; pointer-events: none; }
+
+.nb-visual {
+  position: relative;
+  width: 88px; height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nb-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  display: block;
+}
+.nb-ra {
+  inset: 0;
+  border-color: rgba(94,255,67,.22) transparent rgba(94,255,67,.22) transparent;
+  animation: nbSpin 2.2s linear infinite;
+}
+.nb-rb {
+  inset: 10px;
+  border-color: transparent rgba(0,242,255,.18) transparent rgba(0,242,255,.18);
+  animation: nbSpin 1.7s linear infinite reverse;
+}
+.nb-rc {
+  inset: 20px;
+  border-color: rgba(94,255,67,.1) transparent rgba(94,255,67,.1) transparent;
+  animation: nbSpin 3.1s linear infinite;
+}
+@keyframes nbSpin { to { transform: rotate(360deg); } }
+
+.nb-ico {
+  width: 42px; height: 42px;
+  position: relative; z-index: 2;
+}
+
+.nb-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 185px;
+}
+.nb-lbl {
+  font-family: var(--ff);
+  font-size: .57rem;
+  font-weight: 900;
+  letter-spacing: 5px;
+  color: var(--g);
+  margin: 0;
+  text-align: center;
+}
+.nb-barwrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+}
+.nb-bar {
+  flex: 1;
+  height: 2px;
+  background: rgba(94,255,67,.07);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.nb-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--g), var(--cy));
+  border-radius: 2px;
+  transition: width .4s var(--mo);
+}
+.nb-pct {
+  font-family: 'Courier New', monospace;
+  font-size: .44rem;
+  font-weight: 700;
+  color: rgba(94,255,67,.4);
+  min-width: 26px;
+  text-align: right;
+}
+.nb-log {
+  font-family: 'Courier New', monospace;
+  font-size: .47rem;
+  color: rgba(94,255,67,.2);
+  width: 100%;
+  line-height: 1.9;
+  min-height: 46px;
+  text-align: left;
+}
+.nb-ln { display: block; animation: nbLnIn .18s ease; }
+@keyframes nbLnIn {
+  from { opacity:0; transform:translateX(-5px); }
+  to   { opacity:1; transform:translateX(0);    }
+}
+
+/* ─── FOOTER ─── */
+.nx-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 13px;
+  flex-shrink: 0;
+  border-top: 1px solid rgba(94,255,67,.035);
+}
+.nx-fl, .nx-fr {
+  font-family: 'Courier New', monospace;
+  font-size: .44rem;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.nx-fdot {
+  display: inline-block;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--g);
+  box-shadow: 0 0 4px var(--g);
+  animation: nxBlink 2s step-end infinite;
+}
+
+/* ─── OVERLAY ─── */
+#nxOvr {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.5);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 9989;
+}
+#nxOvr.nx-on { display: block; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 480px) {
+  #nxFab { bottom: 82px; right: 16px; }
+  #nxPanel {
+    right: 10px; left: 10px; width: auto;
+    height: 65svh;
+    bottom: calc(82px + 56px + 10px);
+    border-radius: 18px;
+  }
+  #nxPanel.nx-exp {
+    top: 10px; left: 10px; right: 10px; bottom: 10px;
+    width: auto; height: auto;
+  }
+}
+</style>
+
+
+<!-- ════════════ JS ════════════ -->
+<script>
+(function () {
+  'use strict';
+
+  const $    = id => document.getElementById(id);
+  const fab  = $('nxFab'),   pan  = $('nxPanel'), ovr  = $('nxOvr');
+  const frm  = $('nxFrame'), boot = $('nxBoot'),  fill = $('nbFill');
+  const pct  = $('nbPct'),   lbl  = $('nbLbl'),   log  = $('nbLog');
+  const clk  = $('nxClk'),   ico  = $('nxExpIco');
+
+  let open = false, exp = false, ready = false;
+
+  /* Reloj */
+  (function tick() {
+    const d = new Date(), z = n => String(n).padStart(2,'0');
+    clk.textContent = `${z(d.getHours())}:${z(d.getMinutes())}`;
+    setTimeout(tick, 10000);
+  })();
+
+  /* Boot */
+  const LINES = ['> KERNEL OK','> MODELO v4.0 ✓','> CONTEXTO CARGADO','> SEGURIDAD ACTIVA','> LISTO'];
+  function boot_run(cb) {
+    log.innerHTML = ''; let i = 0;
+    (function step() {
+      if (i >= LINES.length) {
+        fill.style.width = '100%'; pct.textContent = '100%';
+        lbl.textContent = 'NEXUS LISTO'; setTimeout(cb, 460); return;
+      }
+      const p = Math.round((i + 1) / LINES.length * 100);
+      fill.style.width = p + '%'; pct.textContent = p + '%';
+      lbl.textContent = LINES[i];
+      const el = document.createElement('span');
+      el.className = 'nb-ln'; el.textContent = LINES[i];
+      log.appendChild(el); i++; setTimeout(step, 345);
+    })();
+  }
+
+  frm.addEventListener('load', () => {
+    if (frm.src && frm.src !== location.href) { frm.classList.add('nx-on'); ready = true; }
+  });
+
+  function setOvr() {
+    ovr.classList.toggle('nx-on', exp || (open && innerWidth <= 480));
+  }
+  function setExpIco() {
+    ico.innerHTML = exp
+      ? '<path d="M6 2h4v4M14 2h-4v4M10 14H6v-4M14 10v4h-4"/>'
+      : '<path d="M2 6V2h4M10 2h4v4M14 10v4h-4M6 14H2v-4"/>';
+  }
+
+  window.nxToggle = function () {
+    open = !open;
+    fab.classList.toggle('nx-open', open);
+    pan.classList.toggle('nx-open', open);
+    setOvr();
+    if (open && !ready) boot_run(() => { boot.classList.add('nx-done'); frm.src = frm.dataset.src; });
+    if (!open && exp)   { exp = false; pan.classList.remove('nx-exp'); setOvr(); setExpIco(); }
+    /* Ocultar scroll-tooltip de UpGames mientras Nexus está abierto */
+    const sc = document.getElementById('sc-tip');
+    if (sc) sc.style.display = open ? 'none' : '';
+  };
+
+  window.nxClose = function () {
+    if (exp) { exp = false; pan.classList.remove('nx-exp'); setOvr(); setExpIco(); }
+    else nxToggle();
+  };
+
+  window.nxExpand = function () {
+    exp = !exp;
+    pan.classList.toggle('nx-exp', exp);
+    setOvr(); setExpIco();
+  };
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (exp) nxExpand(); else if (open) nxToggle();
+  });
+  window.addEventListener('resize', setOvr);
+
+})();
+</script>
+<!-- ── FIN NEXUS WIDGET ── -->
+
 
 </body>
 </html>
